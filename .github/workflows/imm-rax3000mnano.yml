@@ -11,8 +11,7 @@
 #
 
 name: ImmortalWrt Rax3000nano Builder
-permissions:
-  contents: read/write
+
 on:
   repository_dispatch:
   workflow_dispatch:
