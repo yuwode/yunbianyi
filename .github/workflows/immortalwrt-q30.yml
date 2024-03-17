@@ -11,8 +11,7 @@
 #
 
 name: q30 immortalwrt Builder
-permissions:
-  contents: read/write
+
 
 on:
   repository_dispatch:
