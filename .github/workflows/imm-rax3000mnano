@@ -10,10 +10,9 @@
 # See /LICENSE for more information.
 #
 
-name: immortalwrt rax3000 Builder
+name: ImmortalWrt Rax3000nano Builder
 permissions:
   contents: write
-
 on:
   repository_dispatch:
   workflow_dispatch:
