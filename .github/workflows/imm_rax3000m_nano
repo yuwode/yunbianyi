@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: rax3000m immortalwrt Builder
+name: immortalwrt rax3000 Builder
 permissions:
   contents: write
 
