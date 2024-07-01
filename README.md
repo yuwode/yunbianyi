@@ -1,3 +1,50 @@
+## 使用方法
+- lede源码主要流程：
+  下载源代码，更新 feeds 并选择配置
+
+   ```bash
+   git clone https://github.com/coolsnowwolf/lede
+   cd lede
+   ./scripts/feeds update -a
+   ./scripts/feeds install -a
+   make menuconfig
+   ```
+
+   下载 dl 库，编译固件
+（-j 后面是线程数，第一次编译推荐用单线程）
+
+   ```bash
+   make download -j8
+   make V=s -j1
+   ```
+
+
+
+   二次编译：
+
+   ```bash
+   cd lede
+   git pull
+   ./scripts/feeds update -a
+   ./scripts/feeds install -a
+   make defconfig
+   make download -j8
+   make V=s -j$(nproc)
+   ```
+
+   如果需要重新配置：
+
+   ```bash
+   rm -rf .config
+   make menuconfig
+   make V=s -j$(nproc)
+   ```
+
+   编译完成后输出路径：bin/targets
+- 文件说明：
+
+  仓库根目录目前有两个 DIY 脚本：diy-part1.sh 和 diy-part2.sh，它们分别在更新与安装 feeds 的前后执行，你可以把对源码修改的指令写到脚本中，比如修改默认 IP、主机名、主题、添加 / 删除软件包等操作。但不仅限于这些操作，发挥你强大的想象力，可做出更强大的功能。  
+
 **English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
 # Actions-OpenWrt
