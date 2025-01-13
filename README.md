@@ -43,7 +43,20 @@
    编译完成后输出路径：bin/targets
 - 本库文件说明：
 
-  仓库根目录目前有两个 DIY 脚本：diy-part1.sh 和 diy-part2.sh，它们分别在更新与安装 feeds 的前后执行，你可以把对源码修改的指令写到脚本中，比如修改默认 IP、主机名、主题、添加 / 删除软件包等操作。但不仅限于这些操作，发挥你强大的想象力，可做出更强大的功能。  
+  仓库根目录目前有两个 DIY 脚本：diy-part1.sh 和 diy-part2.sh，它们分别在更新与安装 feeds 的前后执行，你可以把对源码修改的指令写到脚本中，比如修改默认 IP、主机名、主题、添加 / 删除软件包等操作。但不仅限于这些操作，发挥你强大的想象力，可做出更强大的功能。
+ - passwall2说明
+
+    add new line to openwrt feeds
+   ```
+echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
+echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
+```
+pull upstream commits
+```
+./scripts/feeds clean
+./scripts/feeds update -a
+./scripts/feeds install -a
+```
 
 **English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
