@@ -47,16 +47,17 @@
  - passwall2说明
 
     add new line to openwrt feeds
+   ```bash
+   echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
+   echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
    ```
-echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
-echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
-```
-pull upstream commits
-```
-./scripts/feeds clean
-./scripts/feeds update -a
-./scripts/feeds install -a
-```
+   pull upstream commits
+   ```bash
+   ./scripts/feeds clean
+   ./scripts/feeds update -a
+   ./scripts/feeds install -a
+   ```
+
 
 **English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
