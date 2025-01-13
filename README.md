@@ -55,9 +55,9 @@
    ```bash
    git clone https://github.com/coolsnowwolf/lede
    cd lede
-   src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main
-   src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main
-   ./scripts/feeds clean
+   echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
+   echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
+   ./scripts/feeds clean  
    ./scripts/feeds update -a
    ./scripts/feeds install -a
    make menuconfig
